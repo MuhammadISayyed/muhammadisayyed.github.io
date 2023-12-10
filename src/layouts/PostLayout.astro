@@ -16,6 +16,18 @@ const description = frontmatter.description
   .content-container {
     display: flex;
     flex-direction: column;
+
+    & a {
+      color: var(--color-primary-main);
+      text-decoration: underline 2px var(--color-primary-main);
+      text-underline-offset: 0.4em;
+
+      &:hover {
+        color: var(--color-dark-main);
+        text-decoration-color: var(--color-dark-main);
+        transition: all 0.2s ease-in;
+      }
+    }
   }
 
   .article-title {
@@ -42,7 +54,7 @@ const description = frontmatter.description
     }
   }
 
-  @media (max-width: 415px) {
+  @media (max-width: 767px) {
     .content-container {
       width: 80%;
     }
