@@ -1,0 +1,44 @@
+<nav>
+  <a class="logo" href="/">Muhammad Ibrahim</a>
+  <ul class="nav-links">
+    <li><a href="/about">About</a></li>
+    <li><a href="mailto:muhammadisayyed@gmail.com">Get in touch</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    width: 80%;
+    margin-block: 1.5rem;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+
+    & li > a:hover {
+      color: var(--color-primary-main);
+      transition: all 0.2s ease-in;
+    }
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 847px) {
+    nav {
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+    }
+    ul {
+      padding: 0;
+    }
+  }
+</style>

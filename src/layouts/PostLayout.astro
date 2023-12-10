@@ -1,0 +1,49 @@
+---
+import Layout from './Layout.astro'
+const { frontmatter } = Astro.props
+const title = frontmatter.title
+---
+
+<Layout title={title}>
+  <div class="content-container">
+    <h1 class="article-title">{frontmatter.title}</h1>
+    <slot />
+  </div>
+</Layout>
+
+<style is:inline>
+  .content-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-title {
+    margin-block: 3rem;
+    font-size: 3rem;
+    color: var(--color-primary-main);
+    max-width: 20ch;
+    line-height: 1.1;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-start: 2rem;
+    color: var(--color-primary-main);
+  }
+
+  p {
+    margin-block: 0.8rem;
+    &:last-child {
+      margin-bottom: 3rem;
+    }
+  }
+
+  @media (max-width: 415px) {
+    .content-container {
+      width: 80%;
+    }
+  }
+</style>
