@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro'
 const title = 'The pixelated thoughts of Muhammad Ibrahim'
+const description = 'Writings, ramblings and embryonic ideas'
 const articles = await Astro.glob('../pages/articles/**/*.mdx')
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   {
     articles.map((article) => (
       <div class="snippet-container">
