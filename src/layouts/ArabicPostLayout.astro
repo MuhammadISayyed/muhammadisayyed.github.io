@@ -2,9 +2,10 @@
 import Layout from './Layout.astro'
 const { frontmatter } = Astro.props
 const title = frontmatter.title
+const description = frontmatter.description
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <div class="content-container" dir="rtl">
     <h1 class="article-title">{frontmatter.title}</h1>
     <slot />
