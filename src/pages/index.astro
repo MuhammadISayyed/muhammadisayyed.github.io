@@ -3,11 +3,15 @@ import Layout from '../layouts/Layout.astro'
 const title = 'The pixelated thoughts of Muhammad Ibrahim'
 const description = 'Writings, ramblings and embryonic ideas'
 const articles = await Astro.glob('../pages/articles/**/*.mdx')
+const sortedArticles = articles.sort(
+  (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+)
 ---
 
 <Layout title={title} description={description}>
+  <!-- I need to sort posts by date -->
   {
-    articles.map((article) => (
+    sortedArticles.map((article) => (
       <div class="snippet-container">
         <a href={`/articles/${article.frontmatter.slug}`} class="article-title">
           {article.frontmatter.title}
