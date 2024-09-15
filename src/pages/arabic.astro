@@ -11,26 +11,35 @@ const sortedArticles = articles.sort(
 <Layout title={title} description={description}>
   <!-- I need to have an Arabic index and an English index -->
   <!-- I need to sort posts by date -->
-  {
-    sortedArticles.map((article) => (
-      <div class="snippet-container">
-        <a href={`/articles/arabic/${article.frontmatter.slug}`} class="article-title">
-          {article.frontmatter.title}
-        </a>
-        <span class="date">{article.frontmatter.pubDate.slice(0, 10)}</span>
-      </div>
-    ))
-  }
+  <div class="content-container">
+    {
+      sortedArticles.map((article) => (
+        <div class="snippet-container">
+          <a href={`/articles/arabic/${article.frontmatter.slug}`} class="article-title">
+            {article.frontmatter.title}
+          </a>
+          <span class="date">{article.frontmatter.pubDate.slice(0, 10)}</span>
+        </div>
+      ))
+    }
+  </div>
 </Layout>
 
 <style>
+  .content-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-align: right;
+    flex-direction: column;
+    width: 80%;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+  }
   .snippet-container {
     display: flex;
     flex-direction: column;
     margin-top: 1.5rem;
     gap: 1rem;
-    width: 80%;
-    /* margin-bottom: 3rem; */
   }
 
   .date {

@@ -9,8 +9,10 @@ const pubDate = frontmatter.pubDate
 <Layout title={title} description={description}>
   <div class="content-container" dir="rtl">
     <h1 class="article-title">{title}</h1>
-    <span>{pubDate}</span>
-    <slot />
+    <span class="published-at">{pubDate}</span>
+    <main class="article-container">
+      <slot />
+    </main>
   </div>
 </Layout>
 
@@ -18,7 +20,7 @@ const pubDate = frontmatter.pubDate
   .content-container {
     display: flex;
     flex-direction: column;
-    font-family: 'Vazirmatn', sans-serif;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
 
     & a {
       color: var(--color-primary-main);
@@ -52,6 +54,17 @@ const pubDate = frontmatter.pubDate
 
   p {
     margin-block: 0.8rem;
+    font-size: 1.2rem;
+    line-height: 185%;
+  }
+
+  .article-container {
+    margin-block-start: 2.5rem;
+    margin-block-end: 1.5rem;
+  }
+
+  .published-at {
+    font-weight: 200;
   }
 
   @media (max-width: 767px) {

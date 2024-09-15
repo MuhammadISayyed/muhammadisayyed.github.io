@@ -20,7 +20,7 @@ import Nav from '../components/Nav.astro'
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Lateef:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
@@ -54,6 +54,12 @@ import Nav from '../components/Nav.astro'
   dl,
   dd {
     margin: 0;
+    font-size: 1.2rem;
+  }
+
+  a:hover {
+    color: var(--color-primary-main);
+    transition: all 0.2s ease-in;
   }
 
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -147,13 +153,10 @@ import Nav from '../components/Nav.astro'
     font-display: swap;
     font-style: italic;
   }
-</style>
 
-<style>
   .container {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     align-items: center;
   }
 </style>

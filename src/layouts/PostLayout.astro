@@ -9,8 +9,10 @@ const pubDate = frontmatter.pubDate
 <Layout title={title} description={description} pubDate={pubDate}>
   <div class="content-container">
     <h1 class="article-title">{title}</h1>
-    <span>{pubDate}</span>
-    <slot />
+    <span class="published-at">{pubDate}</span>
+    <main class="article-container">
+      <slot />
+    </main>
   </div>
 </Layout>
 
@@ -50,6 +52,7 @@ const pubDate = frontmatter.pubDate
   }
 
   p {
+    font-size: 1.2rem;
     margin-block: 0.8rem;
     &:last-child {
       margin-bottom: 3rem;
@@ -59,6 +62,15 @@ const pubDate = frontmatter.pubDate
   img {
     max-width: 100%;
     height: min-content;
+  }
+
+  .article-container {
+    margin-block-start: 2.5rem;
+    margin-block-end: 1rem;
+  }
+
+  .published-at {
+    font-weight: 200;
   }
 
   @media (max-width: 767px) {
