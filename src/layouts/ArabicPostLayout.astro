@@ -3,11 +3,13 @@ import Layout from './Layout.astro'
 const { frontmatter } = Astro.props
 const title = frontmatter.title
 const description = frontmatter.description
+const pubDate = frontmatter.pubDate
 ---
 
 <Layout title={title} description={description}>
   <div class="content-container" dir="rtl">
-    <h1 class="article-title">{frontmatter.title}</h1>
+    <h1 class="article-title">{title}</h1>
+    <span>{pubDate}</span>
     <slot />
   </div>
 </Layout>
