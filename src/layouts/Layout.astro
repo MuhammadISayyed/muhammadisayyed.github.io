@@ -100,10 +100,6 @@ import Nav from '../components/Nav.astro'
     font: inherit;
   }
 
-  p::selection {
-    background-color: var(--color-primary-main);
-  }
-
   /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
   @media (prefers-reduced-motion: reduce) {
     html:focus-within {
@@ -153,10 +149,7 @@ import Nav from '../components/Nav.astro'
 */
 @font-face {
   font-family: 'Gambetta-Variable';
-  src: url('../../public/fonts/gambetta/Gambetta-Variable.woff2') format('woff2'),
-       url('../../public/fonts/gambetta/Gambetta-Variable.woff') format('woff'),
-       url('../../public/fonts/gambetta/Gambetta-Variable.ttf') format('truetype');
-  font-weight: 300 700;
+  src: url('../../public/fonts/gambetta/Gambetta-Variable.ttf') format('truetype');
   font-display: swap;
   font-style: normal;
 }
@@ -170,10 +163,7 @@ import Nav from '../components/Nav.astro'
 */
 @font-face {
   font-family: 'Gambetta-VariableItalic';
-  src: url('../../public/fonts/gambetta/Gambetta-VariableItalic.woff2') format('woff2'),
-       url('../../public/fonts/gambetta/Gambetta-VariableItalic.woff') format('woff'),
-       url('../../public/fonts/gambetta/Gambetta-VariableItalic.ttf') format('truetype');
-  font-weight: 300 700;
+  src: url('../../public/fonts/gambetta/Gambetta-VariableItalic.ttf') format('truetype');
   font-display: swap;
   font-style: italic;
 }
