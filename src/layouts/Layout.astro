@@ -100,6 +100,10 @@ import Nav from '../components/Nav.astro'
     font: inherit;
   }
 
+  p::selection {
+    background-color: var(--color-primary-main);
+  }
+
   /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
   @media (prefers-reduced-motion: reduce) {
     html:focus-within {
@@ -119,7 +123,7 @@ import Nav from '../components/Nav.astro'
   /* Andy Bell's css reset ends here */
 
   :root {
-    --color-primary-main: hsl(354, 86%, 56%);
+    --color-primary-main: hsl(194, 92%, 53%);
     --color-dark-main: hsl(354, 11%, 18%);
     --color-dark-neutral: hsl(354, 11%, 27%);
   }
