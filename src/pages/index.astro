@@ -1,32 +1,61 @@
 ---
 import Layout from '../layouts/Layout.astro'
-const title = 'The pixelated thoughts of Muhammad Ibrahim'
-const description = 'Writings, ramblings and embryonic ideas'
+const title = 'أفكار محمد إبراهيم المبكسلة'
+const description = 'أفكر لعلي أصيب علمًا'
+const articles = await Astro.glob('../pages/articles/**/*.mdx')
+const sortedArticles = articles.sort(
+  (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+)
 ---
 
 <Layout title={title} description={description}>
-  <div class="container">
-    <div class="languages">
-      <a href="/english">English</a>
-      <a href="/arabic" class="arabic">عربي</a>
-    </div>
+  <div class="content-container">
+    {
+      sortedArticles.map((article) => (
+        <div class="snippet-container">
+          <a href={`/articles/${article.frontmatter.slug}`} class="article-title">
+            {article.frontmatter.title}
+          </a>
+          <span class="date">{article.frontmatter.pubDate.slice(0, 10)}</span>
+        </div>
+      ))
+    }
   </div>
 </Layout>
 
 <style>
-  .container {
+  .content-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-align: right;
+    flex-direction: column;
+    width: 80%;
+    font-family: 'Mezura', sans-serif;
+  }
+  .snippet-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
   }
 
-  .languages {
-    display: flex;
-    gap: 4rem;
+  .date {
+    color: var(--color-dark-neutral);
+    font-size: 1.5rem;
+    font-weight: 200;
   }
 
-  .arabic {
-    font-family: 'Harmattan', sans-serif;
+  .article-title {
+    color: var(--color-dark-main);
+    text-underline-offset: 0.7em;
+    line-height: 3rem;
+    max-width: 55ch;
+    font-size: 1.5rem;
+    font-weight: 600;
+    &:hover {
+      color: var(--color-primary-main);
+      text-decoration-color: var(--color-dark-main);
+      transition: all 0.2s ease-in;
+    }
   }
 </style>

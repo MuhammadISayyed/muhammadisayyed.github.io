@@ -16,13 +16,6 @@ import Nav from '../components/Nav.astro'
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Harmattan:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -77,7 +70,6 @@ import Nav from '../components/Nav.astro'
   body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
-    line-height: 1.7;
   }
 
   /* A elements that don't have a class get default styles */
@@ -130,59 +122,21 @@ import Nav from '../components/Nav.astro'
   }
 
   body {
-    font-family: 'Gambetta', serif;
+    font-family: 'Mezura', sans-serif;
     color: var(--color-text-main);
   }
 
   p {
-    font-size: 1.1rem;
-    max-width: 55ch;
+    font-size: 1.8rem;
+    max-width: 56ch;
   }
 
-  /**
-* This is a variable font
-* You can control variable axes as shown below:
-* font-variation-settings: wght 300.0wght 700.0;
-*
-* available axes:
-'wght' (range from 300.0 to 700.0'wght' (range from 300.0 to 700.0
-*/
 @font-face {
-  font-family: 'Gambetta';
-  src: url('../../public/fonts/gambetta/Gambetta-Variable.ttf') format('truetype');
+  font-family: 'Mezura';
+  src: url('../../public/fonts/mezura/Mezura-Variable-TRIAL.ttf') format('truetype');
   font-display: swap;
   font-style: normal;
 }
-/**
-* This is a variable font
-* You can control variable axes as shown below:
-* font-variation-settings: wght 300.0wght 700.0;
-*
-* available axes:
-'wght' (range from 300.0 to 700.0'wght' (range from 300.0 to 700.0
-*/
-@font-face {
-  font-family: 'Gambetta';
-  src: url('../../public/fonts/gambetta/Gambetta-VariableItalic.ttf') format('truetype');
-  font-display: swap;
-  font-style: italic;
-}
-
-
-  /* Register your custom font family and tell the browser where to find it.
-  @font-face {
-    font-family: 'PleinVariable';
-    src: url('../../public/fonts/plein-variable/Plein-Variable.ttf') format('truetype');
-    font-display: swap;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'PleinVariable';
-    src: url('../../public/fonts/plein-variable/Plein-VariableItalic.ttf') format('truetype');
-    font-display: swap;
-    font-style: italic;
-  } */
 
   .container {
     display: flex;
